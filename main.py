@@ -1,21 +1,15 @@
 import logging
-import sys
-# from os import getenv
 
 import aiogram.filters
 from aiohttp import web
 
-from aiogram import Bot, Dispatcher, Router, types, F
-from aiogram.enums import ParseMode
-from aiogram.filters import CommandStart
-from aiogram.types import Message
-from aiogram.utils.markdown import hbold
+from aiogram import Bot, Dispatcher, Router, F
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
 
 from config import config
-from handlers.callback import to_post_vacancy, to_post_resume, forward_msg, post_forward_msg
+from handlers.callback import forward_msg, post_forward_msg
 from utils.commands import set_commands
-from handlers.basic import command_start, command_help, keyboard_help, keyboard_start, echo_handler
+from handlers.basic import command_start, command_help, keyboard_help, keyboard_start
 from utils.stateform import ForwardBtn
 
 # TOKEN_TG = getenv("BOT_TOKEN")
@@ -83,26 +77,10 @@ def main() -> None:
     dp.message.register(command_help, aiogram.filters.Command(commands='help'))
     dp.message.register(keyboard_help, F.text == 'Помощь')
     dp.message.register(keyboard_start, F.text == 'Запуск')
-    dp.callback_query.register(to_post_vacancy, to_post_resume)
-    dp.callback_query.register(to_post_resume, to_post_vacancy)
-    # dp.callback_query.register(to_post_resume)
 
     dp.message.register(forward_msg)
     dp.callback_query.register(post_forward_msg, ForwardBtn.FORWARD_STATE)
-    # dp.callback_query.register(post_forward_msg, ADMINBTN.FRORWARD_STATE1)
-
-
     # ...
-
-    # dp.message.register(echo_handler)
-
-    # dp.message.register(zapysk, aiogram.filters.Command(commands='start'))
-    # dp.message.register(ans_help, F.text == 'Помощь')
-    # dp.message.register(ans_start, F.text == 'Запуск')
-    # dp.callback_query.register(get_job, get_summary)
-    # dp.callback_query.register(get_summary, get_job)
-    # dp.callback_query.register(get_offer_work, get_other)
-    # dp.callback_query.register(get_other, get_offer_work)
 
     # And finally start webserver
     web.run_app(app, host=WEB_SERVER_HOST, port=WEB_SERVER_PORT)
@@ -117,3 +95,25 @@ if __name__ == "__main__":
 
     main()
 
+
+# ===============================================================
+    # dp.callback_query.register(post_forward_msg, ADMINBTN.FRORWARD_STATE1)
+
+    # dp.callback_query.register(to_post_vacancy, to_post_resume)
+    # dp.callback_query.register(to_post_resume, to_post_vacancy)
+    # dp.callback_query.register(to_post_resume)
+
+
+    # ...
+
+    # dp.message.register(echo_handler)
+
+    # dp.message.register(zapysk, aiogram.filters.Command(commands='start'))
+    # dp.message.register(ans_help, F.text == 'Помощь')
+    # dp.message.register(ans_start, F.text == 'Запуск')
+    # dp.callback_query.register(get_job, get_summary)
+    # dp.callback_query.register(get_summary, get_job)
+    # dp.callback_query.register(get_offer_work, get_other)
+    # dp.callback_query.register(get_other, get_offer_work)
+
+# ===============================================================

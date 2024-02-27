@@ -36,62 +36,6 @@ main_inline_keyboard = InlineKeyboardMarkup(inline_keyboard=[
        ]
 ],)
 
-# меню подтверждения отправки ВАКАНСИИ
-keyboard_vacancy = InlineKeyboardMarkup(inline_keyboard=[
-    [
-        InlineKeyboardButton(
-            text='Да',
-            callback_data='YesVacancy'
-        ),
-        InlineKeyboardButton(
-            text='No',
-            callback_data='NoVacancy'
-        )
-    ]
-])
-
-# меню подтверждения отправки РЕЗЮМЕ
-keyboard_resume = InlineKeyboardMarkup(inline_keyboard=[
-    [
-        InlineKeyboardButton(
-            text='Да',
-            callback_data='YesResume'
-        ),
-        InlineKeyboardButton(
-            text='No',
-            callback_data='NoResume'
-        )
-    ]
-])
-
-# меню подтверждения отправки УСЛУГ
-keyboard_other_work = InlineKeyboardMarkup(inline_keyboard=[
-    [
-        InlineKeyboardButton(
-            text='Да',
-            callback_data='YesOtherWork'
-        ),
-        InlineKeyboardButton(
-            text='No',
-            callback_data='NoOtherWork'
-        )
-    ]
-])
-
-# меню подтверждения отправки ИНЫХ СООБЩЕНИЙ
-keyboard_other_msg = InlineKeyboardMarkup(inline_keyboard=[
-    [
-        InlineKeyboardButton(
-            text='Да',
-            callback_data='YesOtherMsg'
-        ),
-        InlineKeyboardButton(
-            text='No',
-            callback_data='NoOtherMsg'
-        )
-    ]
-])
-
 # меню подтверждения отправки Форвардных сообщений от Админа
 keyboard_forward = InlineKeyboardMarkup(inline_keyboard=[
     [
@@ -112,16 +56,73 @@ keyboard_forward = InlineKeyboardMarkup(inline_keyboard=[
     ]
 ])
 
-# меню подтверждения отправки СООБЩЕНИЙ АДМИНИСТРАТОРУ
-keyboard_msg_admin = InlineKeyboardMarkup(inline_keyboard=[
-    [
-        InlineKeyboardButton(
-            text='Да',
-            callback_data='YesMsgAdmin'
-        ),
-        InlineKeyboardButton(
-            text='Нет',
-            callback_data='NoMsgAdmin'
-        )
-    ]
-])
+# # ========================================
+# # меню подтверждения отправки ВАКАНСИИ
+# keyboard_vacancy = InlineKeyboardMarkup(inline_keyboard=[
+#     [
+#         InlineKeyboardButton(
+#             text='Да',
+#             callback_data='YesVacancy'
+#         ),
+#         InlineKeyboardButton(
+#             text='No',
+#             callback_data='NoVacancy'
+#         )
+#     ]
+# ])
+#
+# # меню подтверждения отправки РЕЗЮМЕ
+# keyboard_resume = InlineKeyboardMarkup(inline_keyboard=[
+#     [
+#         InlineKeyboardButton(
+#             text='Да',
+#             callback_data='YesResume'
+#         ),
+#         InlineKeyboardButton(
+#             text='No',
+#             callback_data='NoResume'
+#         )
+#     ]
+# ])
+#
+# # меню подтверждения отправки УСЛУГ
+# keyboard_other_work = InlineKeyboardMarkup(inline_keyboard=[
+#     [
+#         InlineKeyboardButton(
+#             text='Да',
+#             callback_data='YesOtherWork'
+#         ),
+#         InlineKeyboardButton(
+#             text='No',
+#             callback_data='NoOtherWork'
+#         )
+#     ]
+# ])
+#
+# # меню подтверждения отправки ИНЫХ СООБЩЕНИЙ
+# keyboard_other_msg = InlineKeyboardMarkup(inline_keyboard=[
+#     [
+#         InlineKeyboardButton(
+#             text='Да',
+#             callback_data='YesOtherMsg'
+#         ),
+#         InlineKeyboardButton(
+#             text='No',
+#             callback_data='NoOtherMsg'
+#         )
+#     ]
+# ])
+#
+# # меню подтверждения отправки СООБЩЕНИЙ АДМИНИСТРАТОРУ
+# keyboard_msg_admin = InlineKeyboardMarkup(inline_keyboard=[
+#     [
+#         InlineKeyboardButton(
+#             text='Да',
+#             callback_data='YesMsgAdmin'
+#         ),
+#         InlineKeyboardButton(
+#             text='Нет',
+#             callback_data='NoMsgAdmin'
+#         )
+#     ]
+# ])

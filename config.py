@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     WEB_SERVER_HOST: str = "127.0.0.1"  # Если нет данных в ".env", то берется по умолчанию "127.0.0.1"
     WEB_SERVER_PORT: int = 8080
     WEBHOOK_PATH: str = "/webhook"
-    BASE_WEBHOOK_URL: str = "https://b192-178-204-157-185.ngrok-free.app"
+    BASE_WEBHOOK_URL: str = "https://c859-178-204-157-185.ngrok-free.app"
     # on_Alwaysdata: bool = True
     # Переменная для локального запуска не нужна, если в ".env" нет переменных "WEB_SERVER_HOST", "WEB_SE ..
     # или они закомментированы, то берутся значения по умолчанию, которые прописаны здесь "127.0.0.1", "8080 ..
