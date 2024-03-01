@@ -45,9 +45,10 @@ async def post_forward_msg(call: CallbackQuery, bot: Bot, state: FSMContext):
     name_fwd_for_VK = context_data.get('name_fwd_for_VK')
     msg_fwd = context_data.get('msg_fwd')
 
+    # Удаляем пред. сообщение с клавиатурой подтверждения
+    await bot.delete_message(chat_id=call.from_user.id, message_id=call.message.message_id)
+
     if call.data == 'fwd_no':
-        await call.message.edit_reply_markup()
-        await bot.delete_message(chat_id=call.from_user.id, message_id=call.message.message_id)
         await bot.send_message(chat_id=call.from_user.id,
                                text=f'Вы своей волей отклонили публикацию данного сообщения')
     else:
@@ -61,7 +62,14 @@ async def post_forward_msg(call: CallbackQuery, bot: Bot, state: FSMContext):
         await bot.send_message(chat_id=chatID,
                                text=f'{pretext} {name_fwd}\n\n' + msg_fwd,
                                parse_mode=ParseMode.HTML, disable_web_page_preview=True)
-        await call.message.edit_reply_markup()
+
         await bot.send_message(chat_id=call.from_user.id,
                                text=f'О всемогущий,вы подтвердили отправку "{pretext}" в основной канал')
 
+
+# ============================================
+        # await call.message.edit_reply_markup()
+        # await call.message.delete_reply_markup()
+# ============================================
+# ============================================
+# ============================================

@@ -33,8 +33,8 @@ def msg_analysis(message: Message) -> dict:
                               f'https://t.me/{message.forward_from_chat.username}/{message.forward_from_message_id}'
             text_fwd = f'о мой администратор! Это форварднутая вакансия ' \
                        f'<b>"{name_fwd}"</b> и надо разместить ее в основном канале?'
-            msg_fwd = message.text
-            # msg_fwd = message.html_text
+            # msg_fwd = message.text
+            msg_fwd = message.html_text
 
         else:  # сообщение с канала, когда канал закрытый (сообщение в "message.caption")
             name_fwd = f'от <a href="tg://user?id={message.from_user.id}">' \
